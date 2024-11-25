@@ -30,7 +30,7 @@ if download_choice == 'mp3':
 elif download_choice == 'mp4':
     options = {
         'format': 'bestvideo+bestaudio/best', # Baixa o melhor vídeo + áudio combinados
-        'concurrent_fragments': 500,          # Número de fragmentos simultâneos
+        'concurrent_fragments': 500,          # Número de fragmentos simultâneos ****IMPORTANTE**** ALTERAR CONFORME SUA CONEXÃO DE INTERNET ****IMPORTANTE****
         'retries': 'infinite',                # Tentativas ilimitadas em caso de falha
         'fragment_retries': 5,                # Tentativas de rebaixar fragmentos com erro
         'external_downloader': 'aria2c',      # Usa aria2c como downloader externo
