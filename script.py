@@ -3,7 +3,7 @@ import yt_dlp as dlp
 def Download():
     # URLs dos vídeos para download
     urls = [
-        "",  # Insira a URL do vídeo aqui
+        "https://www.youtube.com/shorts/1eJEnuKmARA",  # Insira a URL do vídeo aqui
         # "", # Insira a URL do vídeo aqui
         # "", # Insira a URL do vídeo aqui
         # "", # Insira a URL do vídeo aqui
@@ -26,7 +26,7 @@ def Download():
                 'preferredquality': '320',        # Define a qualidade para 320 kbps
             }],
             
-            'outtmpl': r'Downloads/%(title)s.%(ext)s',  # Caminho e nome do arquivo
+            'outtmpl': r'Audio/%(title)s.%(ext)s',   # Caminho e nome do arquivo
         }
     elif download_choice == 'mp4':
         options = {
@@ -36,7 +36,12 @@ def Download():
             'fragment_retries': 5,                 # Tentativas de rebaixar fragmentos com erro
             'external_downloader': 'aria2c',       # Usa aria2c como downloader externo            
             'external_downloader_args': ['-x16'],  # Até 16 conexões por arquivo no aria2c            
-            'outtmpl': r'Downloads/%(title)s.%(ext)s',  # Caminho e nome do arquivo
+            'postprocessors': [{                   # Pós-processador para converter em MP4
+                'key': 'FFmpegVideoConvertor',     # Utiliza o FFmpeg para converter o vídeo
+                'preferedformat': 'mp4',           # Define o formato do vídeo para MP4
+            }],
+
+            'outtmpl': r'Videos/%(title)s.%(ext)s',  # Caminho e nome do arquivo
         }
     else:
         print("Escolha inválida. Execute o programa novamente e digite 'mp3' ou 'mp4'.")
