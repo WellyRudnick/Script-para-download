@@ -3,7 +3,7 @@ import yt_dlp as dlp
 def Download():
     # URLs dos vídeos para download
     urls = [
-        "https://www.youtube.com/shorts/1eJEnuKmARA",  # Insira a URL do vídeo aqui
+        "",  # Insira a URL do vídeo aqui
         # "", # Insira a URL do vídeo aqui
         # "", # Insira a URL do vídeo aqui
         # "", # Insira a URL do vídeo aqui
